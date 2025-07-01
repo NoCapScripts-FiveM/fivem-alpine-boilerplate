@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" x-data x-cloak>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./alpine.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FiveM UI Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      [x-cloak] { display: none !important; }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center min-h-screen bg-black/50 backdrop-blur-sm">
+
+    <!-- Main UI Box -->
+    <div class="bg-[#1e1e2f] bg-opacity-90 border border-[#00ffe5] text-white w-[420px] rounded-xl shadow-2xl p-6 space-y-6">
+      
+      <!-- Header -->
+      <div class="flex items-center space-x-3">
+        <img src="./alpine.png" alt="Logo" class="w-10 h-10 rounded" />
+        <h1 class="text-xl font-bold tracking-wide text-[#00ffe5]">Alpine App - FiveM</h1>
+      </div>
+
+      <!-- Description -->
+      <p class="text-gray-300 text-sm">
+        A sleek starter UI for your FiveM NUI with Alpine.js and TailwindCSS.
+      </p>
+
+      <!-- Features List -->
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 bg-[#00ffe5] rounded-full animate-pulse"></span>
+          <span>Start dev server: <code class="text-[#00ffe5] font-semibold">npm run dev</code></span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 bg-[#00ffe5] rounded-full animate-pulse"></span>
+          <span>Hot Reloading Enabled</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 bg-[#00ffe5] rounded-full animate-pulse"></span>
+          <span>Edit page: <code class="text-[#00ffe5] font-semibold">index.html</code></span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 bg-[#00ffe5] rounded-full animate-pulse"></span>
+          <span>Build app: <code class="text-[#00ffe5] font-semibold">npm run build</code></span>
+        </li>
+      </ul>
+
+      <!-- Footer -->
+      <div class="pt-2 border-t border-gray-700 text-sm text-gray-400">
+        <p>GitHub:</p>
+        <a href="https://github.com/NoCapScripts-FiveM/fivem-alpine-boilerplate" target="_blank"
+           class="text-[#00ffe5] hover:underline">NoCapScripts-FiveM/fivem-alpine-boilerplate →</a>
+      </div>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
