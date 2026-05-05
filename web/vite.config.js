@@ -1,23 +1,34 @@
-import { defineConfig } from 'vite'
-import AlpineVitePlugin from './alpine-vite-plugin.js'
-import path from 'path'
+import { defineConfig } from "vite";
+import AlpineVitePlugin from "./alpine-vite-plugin.js";
+import path from "path";
 
 export default defineConfig({
-  root: path.resolve(__dirname, '.'), // 👈 Set 'main/' as root
+  base: "./",
+  root: path.resolve(__dirname, "."),
 
-  plugins: [
-    AlpineVitePlugin()
-  ],
+  plugins: [AlpineVitePlugin()],
 
   build: {
-    outDir: path.resolve(__dirname, '../ui'), // 👈 Output to top-level 'dist'
-    emptyOutDir: true, // Clean output dir before build
-    rollupOptions: {
-      input: path.resolve(__dirname, 'index.html') // Entry point
-    }
-  },
+    outDir: path.resolve(__dirname, "../ui"),
+    emptyOutDir: true,
 
-  server: {
-    open: true,
-  }
-})
+    cssCodeSplit: false,
+    minify: "esbuild",
+
+    rollupOptions: {
+      input: path.resolve(__dirname, "index.html"),
+
+      output: {
+        entryFileNames: "assets/index.js",
+
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith(".css")) {
+            return "assets/index.css";
+          }
+
+          return "assets/[name].[ext]";
+        },
+      },
+    },
+  },
+});

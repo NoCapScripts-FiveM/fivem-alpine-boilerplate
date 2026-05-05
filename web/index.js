@@ -1,9 +1,7 @@
-import './style/index.css'
+import "./style/index.css";
 
-import Alpine from 'alpinejs'
-window.Alpine = Alpine
+import Alpine from "alpinejs";
+window.Alpine = Alpine;
 
-import './js/app.js'
-Alpine.start()
-
-
+import "./src/js/app.js";
+Alpine.start();
