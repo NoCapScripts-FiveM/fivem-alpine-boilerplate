@@ -140,10 +140,24 @@ game      'gta5'
 lua54     'yes'
 version   '1.0.0'
 
-ui_page 'web/index.html'
+
+client_script {
+    'client/main.lua'
+}
+
+server_script {
+    'server/main.lua'
+}
+
+shared_script {
+    'shared/config.lua'
+}
+
+ui_page 'ui/index.html'
 
 files {
-    'web/dist/**',
+    'ui/index.html',
+    'ui/assets/**',
 }
 ```
 
